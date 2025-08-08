@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Resilience Micro-Series | An Interactive Curriculum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 45vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 50vh;
+            }
+        }
+        .flowchart-node {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .flowchart-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <div class="container mx-auto p-4 sm:p-6 md:p-8">
+        
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">The Resilience Micro-Series</h1>
+            <p class="text-lg text-red-600 font-semibold">An Interactive Curriculum by Chaitanya J Mehta</p>
+            <p class="max-w-3xl mx-auto mt-4 text-gray-600">Helping professionals thrive under pressure through story, psychology, and emotional clarity.</p>
+        </header>
+
+        <section id="overview" class="mb-16">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-4">Visualizing the Learning Journey</h2>
+                <p class="text-center text-gray-600 mb-8">This infographic illustrates the structure of the Resilience Micro-Series, showing how foundational concepts branch into practical, actionable toolkits. The curriculum's 19 modules are designed to be combined into custom learning paths tailored to specific needs.</p>
+                <div class="chart-container mx-auto h-96 max-h-[50vh]">
+                    <canvas id="curriculumOverviewChart"></canvas>
+                </div>
+                <p class="text-center text-gray-600 mt-6 text-sm">The chart above shows the distribution of modules across the four learning levels, providing a high-level overview of the curriculum's focus areas.</p>
+            </div>
+        </section>
+
+        <section id="map" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">The Curriculum Map</h2>
+
+            <div class="flex flex-col items-center">
+                
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-800 p-6 rounded-lg shadow-lg w-full max-w-2xl text-center flowchart-node mb-8">
+                    <h3 class="font-bold text-xl mb-1">Level 1: The Gateway Keynotes</h3>
+                    <p class="text-sm">These 20-minute overviews are the primary entry points to the series, establishing the 'Why' and the 'How' of resilience.</p>
+                </div>
+                
+                <div class="h-8 w-1 bg-red-200"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md flowchart-node text-center border-t-4 border-red-400">
+                        <h4 class="font-bold text-lg text-red-800">The Resilience Journey</h4>
+                        <p class="text-sm text-gray-600">Introduces core concepts through powerful stories to build curiosity and buy-in.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flowchart-node text-center border-t-4 border-red-400">
+                        <h4 class="font-bold text-lg text-red-800">The ESCAPE Plan</h4>
+                        <p class="text-sm text-gray-600">Delivers a practical, actionable toolkit of six resilience strategies.</p>
+                    </div>
+                </div>
+
+                <div class="h-8 w-1 bg-orange-200"></div>
+
+                <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-800 p-6 rounded-lg shadow-lg w-full max-w-2xl text-center flowchart-node mb-8">
+                    <h3 class="font-bold text-xl mb-1">Level 2: The Foundational Pillars</h3>
+                    <p class="text-sm">Expands on the core ideas, explaining the science and philosophy behind the practical tools.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-6xl mb-12">
+                     <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-orange-400"><h5 class="font-semibold text-orange-800">Pillar 01: The Bounce Back</h5><p class="text-xs text-gray-600">Defines the core concept of resilience.</p></div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-orange-400"><h5 class="font-semibold text-orange-800">Pillar 02: The Arena of Work</h5><p class="text-xs text-gray-600">Links resilience to professional life.</p></div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-orange-400"><h5 class="font-semibold text-orange-800">Pillar 03: Hedonic Adaptation</h5><p class="text-xs text-gray-600">The science of our happiness baseline.</p></div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-orange-400"><h5 class="font-semibold text-orange-800">Pillar 04: The Resilience Formula</h5><p class="text-xs text-gray-600">Presents the 50/10/40 model.</p></div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-orange-400"><h5 class="font-semibold text-orange-800">Pillar 05: The 40% Solution</h5><p class="text-xs text-gray-600">Proves resilience is a trainable skill.</p></div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-orange-400"><h5 class="font-semibold text-orange-800">Pillar 06: Beyond Balance</h5><p class="text-xs text-gray-600">Challenges the work-life balance myth.</p></div>
+                </div>
+                
+                <div class="h-8 w-1 bg-yellow-200"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl">
+                    <div>
+                        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-6 rounded-lg shadow-lg w-full text-center flowchart-node mb-8">
+                            <h3 class="font-bold text-xl mb-1">Level 3: Mindset Toolkit</h3>
+                            <p class="text-sm">Teaches cognitive and emotional skills to foster insight and change perspective.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-yellow-400"><h5 class="font-semibold text-yellow-800">The Invisible Cage</h5><p class="text-xs text-gray-600">A deep dive into Paradigms.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-yellow-400"><h5 class="font-semibold text-yellow-800">The Unseen Concert</h5><p class="text-xs text-gray-600">Explores the power of Perception.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-yellow-400"><h5 class="font-semibold text-yellow-800">What's In Your Cup?</h5><p class="text-xs text-gray-600">Focuses on Attitude and ownership.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-yellow-400"><h5 class="font-semibold text-yellow-800">The Pause</h5><p class="text-xs text-gray-600">A tool for Thinking vs. Judging.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-yellow-400"><h5 class="font-semibold text-yellow-800">The Tightrope Walker</h5><p class="text-xs text-gray-600">A tool for Caution vs. Paranoia.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-yellow-400"><h5 class="font-semibold text-yellow-800">The Surgeon's Edge</h5><p class="text-xs text-gray-600">An advanced module on clinical decision-making.</p></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-green-100 border-l-4 border-green-500 text-green-800 p-6 rounded-lg shadow-lg w-full text-center flowchart-node mb-8">
+                            <h3 class="font-bold text-xl mb-1">Level 4: Action Toolkit</h3>
+                            <p class="text-sm">Direct, "how-to" guides for implementing resilience strategies in daily life.</p>
+                        </div>
+                         <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-green-400"><h5 class="font-semibold text-green-800">The Two Most Powerful Words</h5><p class="text-xs text-gray-600">A practical communication skill.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-green-400"><h5 class="font-semibold text-green-800">Forgive and Forget</h5><p class="text-xs text-gray-600">Tools for letting go of resentment.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-green-400"><h5 class="font-semibold text-green-800">Rat Park</h5><p class="text-xs text-gray-600">The scientific case for connection.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-green-400"><h5 class="font-semibold text-green-800">The Second Victim</h5><p class="text-xs text-gray-600">A crucial module for healthcare professionals.</p></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm flowchart-node border-t-4 border-green-400"><h5 class="font-semibold text-green-800">The Moral Compass</h5><p class="text-xs text-gray-600">The capstone module on purpose.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="relationships" class="mt-16 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+             <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-4">Keynote Connections</h2>
+             <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">The curriculum is designed as an interconnected web of ideas. The "Resilience Journey" keynote establishes the foundational "Why," while the "ESCAPE Plan" keynote delivers the practical "How." This chart visualizes which deeper modules are primarily supported by each keynote.</p>
+            <div class="chart-container mx-auto h-auto max-h-[60vh]">
+                <canvas id="relationshipChart"></canvas>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-gray-700 font-semibold">Chaitanya J Mehta | Consultant Surgeon | Speaker | Resilience Mentor</p>
+            <p class="text-sm text-gray-500">To bring a tailored resilience session to your organisation, please get in touch.</p>
+            <p class="text-sm text-blue-600 mt-1">cmehta.71@gmail.com</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    if (currentLine) lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines.length > 0 ? lines : [label];
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            return Array.isArray(label) ? label.join(' ') : label;
+        };
+        
+        const energeticPlayfulPalette = {
+            primary: 'rgba(239, 68, 68, 0.85)',
+            secondary: 'rgba(251, 146, 60, 0.85)',
+            accent1: 'rgba(250, 204, 21, 0.85)',
+            accent2: 'rgba(74, 222, 128, 0.85)',
+            accent3: 'rgba(59, 130, 246, 0.85)',
+            text: '#44403c'
+        };
+        
+        const selectedPalette = energeticPlayfulPalette;
+
+        const curriculumData = {
+            labels: [wrapLabel('Level 1: Keynotes'), wrapLabel('Level 2: Foundational Pillars'), wrapLabel('Level 3: Mindset Toolkit'), wrapLabel('Level 4: Action Toolkit')],
+            datasets: [{
+                label: 'Number of Modules',
+                data: [2, 6, 6, 5],
+                backgroundColor: [
+                    selectedPalette.primary,
+                    selectedPalette.secondary,
+                    selectedPalette.accent1,
+                    selectedPalette.accent2,
+                ],
+                borderColor: '#ffffff',
+                borderWidth: 2,
+                hoverOffset: 4
+            }]
+        };
+
+        const overviewCtx = document.getElementById('curriculumOverviewChart').getContext('2d');
+        new Chart(overviewCtx, {
+            type: 'doughnut',
+            data: curriculumData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            color: selectedPalette.text,
+                            font: { size: 12 },
+                            boxWidth: 20,
+                            padding: 15,
+                            generateLabels: function(chart) {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map((label, i) => {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                                        const text = Array.isArray(label) ? label.join(' ') : label;
+                                        return {
+                                            text: text,
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                            }
+                        }
+                    },
+                    title: { display: false },
+                    tooltip: {
+                         callbacks: { title: tooltipTitleCallback }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+
+        const relationshipCtx = document.getElementById('relationshipChart').getContext('2d');
+        new Chart(relationshipCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('Foundational Pillars'), 
+                    wrapLabel('Mindset Toolkit'), 
+                    wrapLabel('Action Toolkit')
+                ],
+                datasets: [{
+                    label: 'Links to "The Resilience Journey" (Why)',
+                    data: [6, 6, 0],
+                    backgroundColor: selectedPalette.secondary,
+                    stack: 'Stack 0',
+                }, {
+                    label: 'Links to "The ESCAPE Plan" (How)',
+                    data: [0, 0, 5],
+                    backgroundColor: selectedPalette.accent3,
+                    stack: 'Stack 0',
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: selectedPalette.text, font: { size: 10 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        title: { display: true, text: 'Number of Modules', color: selectedPalette.text }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { color: selectedPalette.text, font: { size: 12 } },
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: selectedPalette.text,
+                            boxWidth: 20,
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
